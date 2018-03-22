@@ -9,12 +9,10 @@ class App extends React.Component {
     
   }
 
-  selectVideo() {
-    console.log();
-    console.log('here!')
-    // this.setState({
-    //   currentVideo: 
-    // });
+  selectVideo(video) {
+    this.setState({
+      currentVideo: video
+    });
   }
   
   render() {
@@ -30,8 +28,8 @@ class App extends React.Component {
         <div className="col-md-7">
           <div><VideoPlayer video={this.state.currentVideo} /></div>
         </div>
-        <div className="col-md-5">
-          <div><VideoList onClick={this.selectVideo.bind(this)} videos={this.state.videos}/></div>
+        <div className="col-md-5" >
+          <div><VideoList selectVideo={this.selectVideo.bind(this)} videos={this.state.videos}/></div>
         </div>
       </div>
     </div>);
